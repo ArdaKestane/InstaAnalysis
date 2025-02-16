@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #95b4cc;
+  --second-color: #2b4c65;
+  --third-color: #6b8ba4;
+  --fourth-color: #1f2544;
+  --fifth-color: #525762;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Sample button component styling */
+.sample-button {
+  background-color: var(--second-color);
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sample-button:hover {
+  background-color: var(--third-color);
+}
+
+/* Sample text component styling */
+.sample-text {
+  color: var(--third-color);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Sample container styling */
+.sample-container {
+  background-color: var(--fourth-color);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.sample-container-2 {
+  background-color: var(--second-color);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-second {
+  color: var(--second-color);
+}
+
+.text-third {
+  color: var(--third-color);
+}
+
+.text-fourth {
+  color: var(--fourth-color);
+}
+
+.text-fifth {
+  color: var(--fifth-color);
+}

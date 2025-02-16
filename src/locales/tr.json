@@ -1,0 +1,29 @@
+{
+  "Header": "InstaAnaliz",
+  "followBack": "Geri Takip Edenler",
+  "dontFollowBack": "Geri Takip Etmeyenler",
+  "uploadFollowers": "Takipçileri Yükle",
+  "uploadFollowings": "Takip Edilenleri Yükle",
+  "analyze": "Analiz Et",
+  "noFileChosen": "Dosya Seçilmedi",
+  "chooseFile": "Dosya Seç",
+  "howItWorks": "Nasıl Çalışır",
+  "step": "Adım",
+  "getDataTitle": "Bilgilerini İndir",
+  "getDataDescription": "Öncelikle <a href='https://www.instagram.com/download/request' target='_blank' class='text-blue-400 underline'>veri talebi sayfasına</a> gidin ve 'Bilgileri indir veya aktar butonuna tıklayın.",
+
+  "howMuchDataTitle": "Bilgi miktarı?",
+  "howMuchDataDescription": "Sadece takip edilen ve takipçi bilgilerine ihtiycımız olduğu için 'Bilgilerin bazıları' butonunu seçin.",
+
+  "dataCategoryTitle": "Bilgi kategori seçimi",
+  "dataCategoryDescription": "Açılan listeden 'Takipçiler ve Takip Edilenler' kategorisini seçin ve 'Verileri İndir' butonuna tıklayın.",
+
+  "downloadToDeviceTitle": "Bilgilerinizi indirin",
+  "downloadToDeviceDescription": "Verilerinizi cihazınıza kaydetmek için 'Cihaza indir' butonunu tercih edin.",
+
+  "dataFormatTitle": "Verilerin formatı",
+  "dataFormatDescription": "Tarih aralığını 'Tüm zamanlar', Format tipini ise 'JSON' olarak seçin ve 'Dosyaları Oluşturun' butonuna tıklayın.",
+
+  "awaitingDataTitle": "Verileri beklemek",
+  "awaitingDataDescription": "Verileriniz hazırlanmaya başlandı. Hazır olduğunda ilgili mail adresine iletilecektir. Bu işlem genellikle yaklaşık 30 dakika sürmektedir. Verileri yükledikten sonra 'followers' ve 'followings' dosyalarını yükleyebilirsiniz."
+}

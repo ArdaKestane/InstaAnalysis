@@ -1,0 +1,27 @@
+{
+  "Header": "InstaAnalysis",
+  "followBack": "Follow Back",
+  "dontFollowBack": "Don't Follow Back",
+  "uploadFollowers": "Upload Followers",
+  "uploadFollowings": "Upload Followings",
+  "analyze": "Analyze",
+  "noFileChosen": "No File Chosen",
+  "chooseFile": "Choose File",
+  "howItWorks": "How It Works",
+  "step": "Step",
+
+  "howMuchDataTitle": "Information amount",
+  "howMuchDataDescription": "We only need the following and follower information, so select the 'Some information' button.",
+
+  "dataCategoryTitle": "Choose the information category",
+  "dataCategoryDescription": "Select the 'Followers and Following' category from the drop-down list and click the 'Download Data' button.",
+
+  "downloadToDeviceTitle": "Download your information",
+  "downloadToDeviceDescription": "Choose the 'Download to device' button to save your data to your device.",
+
+  "dataFormatTitle": "Data format",
+  "dataFormatDescription": "Select the date range as 'All time', the format type as 'JSON' and click the 'Create Files' button click.",
+
+  "awaitingDataTitle": "Waiting for data",
+  "awaitingDataDescription": "Your data has started to be prepared. It will be sent to the relevant e-mail address when it is ready. This process usually takes about 30 minutes. After uploading the data, you can upload the 'followers' and 'followings' files."
+}
