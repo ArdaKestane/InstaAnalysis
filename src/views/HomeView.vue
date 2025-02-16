@@ -66,7 +66,7 @@
       <FileUploader @file-loaded="handleFileLoaded" />
       <div
         v-if="followersData && followingData"
-        class="flex justify-center items-center mt-4"
+        class="flex justify-center items-center mt-6"
       >
         <button
           @click="analyzeData"
