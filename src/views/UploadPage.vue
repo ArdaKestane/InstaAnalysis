@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex flex-col justify-between text-white font-montserrat"
+    class="relative flex flex-col justify-between text-white font-montserrat min-h-screen"
   >
     <!-- Background Gradient -->
     <div class="absolute inset-0 bg-black">
