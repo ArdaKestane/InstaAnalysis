@@ -1,4 +1,8 @@
 {
+  "title": "Takip Etmeyenleri Bulmanın En Kolay ve Güvenli Yolu",
+  "description": "Birçok web sitesi ve uygulama benzer hizmetler sunmaktadır. Ancak, Instagram giriş bilgilerinizi paylaşmak ciddi bir güvenlik riski oluşturur ve hesap hırsızlığının en yaygın nedenlerinden biridir. Platformumuz, herhangi bir kişisel bilgi talep etmeden güvenli bir deneyim sağlar.",
+  "get_started": "Hemen Başla",
+  "how_it_works": "Nasıl Çalışır",
   "Header": "InstaAnaliz",
   "followBack": "Geri Takip Edenler",
   "dontFollowBack": "Geri Takip Etmeyenler",
@@ -9,8 +13,11 @@
   "chooseFile": "Dosya Seç",
   "howItWorks": "Nasıl Çalışır",
   "step": "Adım",
+
   "getDataTitle": "Bilgilerini İndir",
-  "getDataDescription": "Öncelikle <a href='https://www.instagram.com/download/request' target='_blank' class='text-blue-400 underline'>veri talebi sayfasına</a> gidin ve 'Bilgileri indir veya aktar butonuna tıklayın.",
+  "getDataFirst": "Öncelikle ",
+  "getDataLink": "veri talebi sayfasına",
+  "getDataSecond": " gidin ve 'Bilgileri indir veya aktar butonuna tıklayın.",
 
   "howMuchDataTitle": "Bilgi miktarı?",
   "howMuchDataDescription": "Sadece takip edilen ve takipçi bilgilerine ihtiycımız olduğu için 'Bilgilerin bazıları' butonunu seçin.",

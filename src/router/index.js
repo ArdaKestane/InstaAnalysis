@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import HowToUse from '@/views/HowToUse.vue';
+import UploadPage from '@/views/UploadPage.vue';
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/how-to-use',
     name: 'how-to-use',
     component: HowToUse,
+  },
+  {
+    path: '/upload',
+    name: 'upload',
+    component: UploadPage,
   },
 ];
 

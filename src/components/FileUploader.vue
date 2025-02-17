@@ -1,5 +1,5 @@
 <template>
-  <div class="file-upload space-y-6">
+  <div class="space-y-6">
     <!-- Followers Upload -->
     <div class="flex flex-col space-y-2">
       <label class="font-semibold">{{ $t('uploadFollowers') }}</label>
@@ -12,14 +12,14 @@
         hidden
       />
       <button
-        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="bg-white text-black px-4 py-2 rounded-md focus:outline-none font-semibold italic"
         @click="triggerFileInput('followers')"
       >
         {{ $t('chooseFile') }}
       </button>
-      <span class="text-gray-300">{{
-        followersFileName || $t('noFileChosen')
-      }}</span>
+      <p class="text-gray-300 italic">
+        {{ followersFileName || $t('noFileChosen') }}
+      </p>
     </div>
 
     <!-- Followings Upload -->
@@ -34,14 +34,14 @@
         hidden
       />
       <button
-        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="bg-white text-black px-4 py-2 rounded-md focus:outline-none font-semibold italic"
         @click="triggerFileInput('following')"
       >
         {{ $t('chooseFile') }}
       </button>
-      <span class="text-gray-300">{{
-        followingFileName || $t('noFileChosen')
-      }}</span>
+      <p class="text-gray-300 italic">
+        {{ followingFileName || $t('noFileChosen') }}
+      </p>
     </div>
   </div>
 </template>
@@ -90,13 +90,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.file-upload {
-  max-width: 500px;
-  margin: auto;
-}
-label {
-  font-weight: bold;
-}
-</style>

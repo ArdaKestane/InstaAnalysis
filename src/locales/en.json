@@ -1,4 +1,8 @@
 {
+  "title": "The Easiest & Safest Way to Find Non-Followers",
+  "description": "We know there are many other websites and services that do the same thing, BUT giving away your Instagram credentials can be dangerous and is the most common way accounts get stolen. We don’t ask for ANY information, so there’s zero risk.",
+  "get_started": "Get Started",
+  "how_it_works": "How It Works",
   "Header": "InstaAnalysis",
   "followBack": "Follow Back",
   "dontFollowBack": "Don't Follow Back",
@@ -10,6 +14,10 @@
   "howItWorks": "How It Works",
   "step": "Step",
 
+  "getDataTitle": "Download Your Information",
+  "getDataFirst": "First, go to the ",
+  "getDataLink": "data request page",
+  "getDataSecond": " and click the 'Download or export information' button.",
   "howMuchDataTitle": "Information amount",
   "howMuchDataDescription": "We only need the following and follower information, so select the 'Some information' button.",
 

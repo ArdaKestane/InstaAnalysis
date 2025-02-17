@@ -1,12 +1,20 @@
 <template>
-  <div id="app">
-    <div class="flex justify-between items-center p-4 bg-[#1A1A1D] text-white">
-      <h1 class="text-4xl">{{ $t('Header') }}</h1>
+  <div
+    class="relative h-screen flex items-center justify-center text-white font-montserrat"
+  >
+    <div class="absolute inset-0 bg-black">
+      <div
+        class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+      ></div>
+    </div>
 
-      <!-- Language dropdown with flags -->
+    <!-- Language Selector -->
+    <div class="absolute top-4 right-4 text-white">
       <div class="relative">
-        <button @click="toggleDropdown" class="flex items-center space-x-2">
-          <!-- Flag Icon -->
+        <button
+          @click="toggleDropdown"
+          class="flex items-center space-x-2 px-4 py-2 rounded-full shadow bg-[#1A1A1D]"
+        >
           <img
             v-if="currentLanguage === 'en'"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"
@@ -19,208 +27,103 @@
             alt="Turkish Flag"
             class="w-6 h-4"
           />
-          <span>{{ currentLanguage === 'en' ? 'English' : 'Türkçe' }}</span>
+          <p class="uppercase font-semibold">
+            {{ currentLanguage === 'en' ? 'English' : 'Türkçe' }}
+          </p>
         </button>
 
         <!-- Dropdown -->
         <div
           v-if="dropdownVisible"
-          class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg"
+          class="absolute right-0 mt-2 w-40 shadow-lg rounded-lg z-50 bg-[#1A1A1D]"
         >
           <ul>
             <li
               @click="changeLanguage('en')"
-              class="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+              class="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center space-x-2 text-white font-bold"
             >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"
                 alt="English Flag"
-                class="w-6 h-4 inline-block mr-2"
+                class="w-6 h-4"
               />
-              English
+              <span>English</span>
             </li>
             <li
               @click="changeLanguage('tr')"
-              class="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
+              class="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center space-x-2 text-white font-bold"
             >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2560px-Flag_of_Turkey.svg.png"
                 alt="Turkish Flag"
-                class="w-6 h-4 inline-block mr-2"
+                class="w-6 h-4"
               />
-              Türkçe
+              <span>Türkçe</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <main class="p-6">
-      <button
-        @click="$router.push('/how-to-use')"
-        class="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        {{ $t('howItWorks') }}
-      </button>
+    <!-- Content -->
+    <div class="relative text-center max-w-2xl px-6">
+      <h1 class="text-5xl font-bold">{{ $t('title') }}</h1>
+      <p class="mt-4 text-lg text-gray-300">
+        {{ $t('description') }}
+      </p>
 
-      <FileUploader @file-loaded="handleFileLoaded" />
-      <div
-        v-if="followersData && followingData"
-        class="flex justify-center items-center mt-6"
-      >
+      <!-- Buttons -->
+      <div class="mt-6 flex justify-center gap-4">
         <button
-          @click="analyzeData"
-          class="bg-blue-500 text-white px-4 py-2 rounded"
+          class="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-300 transition"
+          @click="$router.push('/upload')"
         >
-          {{ $t('analyze') }}
+          {{ $t('get_started') }}
+        </button>
+        <button
+          class="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition"
+          @click="$router.push('/how-to-use')"
+        >
+          {{ $t('how_it_works') }}
         </button>
       </div>
-
-      <div v-if="analysisResult">
-        <div>
-          <h3 class="font-semibold text-lg">{{ $t('dontFollowBack') }}:</h3>
-          <ul>
-            <li
-              v-for="(user, index) in analysisResult.dontFollowBack"
-              :key="index"
-            >
-              {{ user }}
-            </li>
-          </ul>
-        </div>
-
-        <div v-if="false">
-          <h2 class="text-2xl mt-6">Analysis Results:</h2>
-          <h3 class="font-semibold text-lg">{{ $t('followBack') }}:</h3>
-          <ul>
-            <li v-for="(user, index) in analysisResult.followBack" :key="index">
-              {{ user }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </main>
+    </div>
   </div>
 </template>
 
 <script>
-import FileUploader from '../../src/components/FileUploader.vue';
-
 export default {
-  name: 'App',
-  components: {
-    FileUploader,
-  },
-
+  name: 'LandingPage',
   data() {
     return {
-      followersData: null,
-      followingData: null,
-      analysisResult: null,
+      currentLanguage: localStorage.getItem('lang') || 'en',
       dropdownVisible: false,
-      currentLanguage: null,
     };
   },
-  mounted() {
-    this.currentLanguage = localStorage.getItem('language') || 'tr';
 
-    const savedFollowersData = localStorage.getItem('followersData');
-    const savedFollowingData = localStorage.getItem('followingData');
-    const savedAnalysisResult = localStorage.getItem('analysisResult');
-
-    if (savedFollowersData) {
-      this.followersData = JSON.parse(savedFollowersData);
-    }
-    if (savedFollowingData) {
-      this.followingData = JSON.parse(savedFollowingData);
-    }
-    if (savedAnalysisResult) {
-      this.analysisResult = JSON.parse(savedAnalysisResult);
-    }
-  },
   methods: {
     toggleDropdown() {
       this.dropdownVisible = !this.dropdownVisible;
     },
-    changeLanguage(language) {
-      this.currentLanguage = language;
-      localStorage.setItem('language', language);
-      this.$i18n.locale = language;
-      this.dropdownVisible = false; // Close dropdown after selecting a language
+
+    changeLanguage(lang) {
+      this.currentLanguage = lang;
+      this.$i18n.locale = lang;
+      localStorage.setItem('lang', lang);
+      this.dropdownVisible = false;
     },
-    handleFileLoaded({ type, data }) {
-      if (type === 'followers') {
-        this.followersData = data;
-        localStorage.setItem('followersData', JSON.stringify(data));
-      } else if (type === 'following') {
-        this.followingData = data;
-        localStorage.setItem('followingData', JSON.stringify(data));
-      }
-    },
-    analyzeData() {
-      // Check if followersData and followingData are defined and are arrays
-      if (!this.followersData || !Array.isArray(this.followersData)) {
-        alert('Followers data is missing or not an array.');
-        return;
-      }
+  },
 
-      if (
-        !this.followingData ||
-        !this.followingData.relationships_following ||
-        !Array.isArray(this.followingData.relationships_following)
-      ) {
-        alert('Following data is missing or not an array.');
-        return;
-      }
-
-      const followersUsernames = this.followersData
-        .map((user) => user.string_list_data[0]?.value)
-        .filter(Boolean);
-
-      const followingUsernames = this.followingData.relationships_following
-        .map((user) => user.string_list_data[0]?.value)
-        .filter(Boolean);
-
-      const notFollowBack = followingUsernames.filter(
-        (user) => !followersUsernames.includes(user)
-      );
-
-      this.analysisResult = {
-        followBack: followingUsernames.filter((user) =>
-          followersUsernames.includes(user)
-        ),
-        dontFollowBack: notFollowBack,
-      };
-    },
+  mounted() {
+    this.$i18n.locale = this.currentLanguage;
   },
 };
 </script>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-body {
+.font-montserrat {
   font-family: 'Montserrat', sans-serif;
-}
-
-header {
-  background-color: #1f2937;
-}
-
-button:hover {
-  background-color: #3490dc;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  padding: 8px 12px;
-}
-
-li:hover {
-  background-color: #f1f5f9;
 }
 </style>
